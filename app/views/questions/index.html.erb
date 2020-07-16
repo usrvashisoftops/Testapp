@@ -1,0 +1,19 @@
+<h1>Quora Application</h1>
+<div>
+ <%= link_to "Log Out", destroy_user_session_path, data: { method: :delete } %>
+ </div>
+<h3>Listing Questions</h3>
+ 
+<table>
+
+  <tr>
+    <th>Text</th>
+    <th></th>
+  </tr>
+ 
+  <% @questions.each do |question| %>
+    <tr>
+      <td><%= link_to question.text, question_path(question) %></td>
+    </tr>
+  <% end %>
+</table>

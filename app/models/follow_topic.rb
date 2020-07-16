@@ -1,0 +1,2 @@
+class FollowTopic < ApplicationRecord
+end

@@ -1,0 +1,20 @@
+<h1>Show Question</h1>
+ 
+<table>
+  <tr>
+    <th>Text</th>
+    <th></th>
+  </tr>
+ 
+    <tr>
+      <td><%= @question.text %></td>
+    </tr>
+    <tr>
+      <td>
+        <%= button_to 'Follow User', {:controller => "follow_users", :action => "create", :question_id => @question.id, :follow_user => {:folow_user_id => @question.user_id, :user_id=> session[:user_id]}}%>
+      </td>
+      <td>
+        <%= button_to 'Follow Topic', {:controller => "follow_topics", :action => "create", :question_id => @question.id, :follow_topic => {:topic_id => @question.topic_id, :user_id=> session[:user_id]}}%>
+      </td>
+    </tr>
+</table>
